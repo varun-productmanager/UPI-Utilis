@@ -1,0 +1,55 @@
+{
+  "_comment": "UPI handle -> PSP (app/TPAP) + sponsor bank mapping. This is NOT an official NPCI registry; no such public registry exists. It is community-maintained and best-effort. Handles get added and retired over time. Verify against a live transaction before relying on it for anything that moves money. PRs welcome — see CONTRIBUTING.md.",
+  "lastVerified": "2026-06-19",
+  "source": "community-maintained; cross-referenced from public PSP documentation and observed live VPAs",
+  "handles": {
+    "ybl": { "psp": "PhonePe", "sponsorBank": "Yes Bank" },
+    "ibl": { "psp": "PhonePe", "sponsorBank": "ICICI Bank" },
+    "axl": { "psp": "PhonePe", "sponsorBank": "Axis Bank" },
+
+    "okhdfcbank": { "psp": "Google Pay", "sponsorBank": "HDFC Bank" },
+    "okaxis": { "psp": "Google Pay", "sponsorBank": "Axis Bank" },
+    "okicici": { "psp": "Google Pay", "sponsorBank": "ICICI Bank" },
+    "oksbi": { "psp": "Google Pay", "sponsorBank": "State Bank of India" },
+
+    "paytm": { "psp": "Paytm", "sponsorBank": "Paytm Payments Bank" },
+    "ptyes": { "psp": "Paytm", "sponsorBank": "Yes Bank" },
+    "ptaxis": { "psp": "Paytm", "sponsorBank": "Axis Bank" },
+    "pthdfc": { "psp": "Paytm", "sponsorBank": "HDFC Bank" },
+    "ptsbi": { "psp": "Paytm", "sponsorBank": "State Bank of India" },
+
+    "apl": { "psp": "Amazon Pay", "sponsorBank": "Axis Bank" },
+    "yapl": { "psp": "Amazon Pay", "sponsorBank": "Yes Bank" },
+    "rapl": { "psp": "Amazon Pay", "sponsorBank": "RBL Bank" },
+
+    "waaxis": { "psp": "WhatsApp Pay", "sponsorBank": "Axis Bank" },
+    "waicici": { "psp": "WhatsApp Pay", "sponsorBank": "ICICI Bank" },
+    "wahdfcbank": { "psp": "WhatsApp Pay", "sponsorBank": "HDFC Bank" },
+    "wasbi": { "psp": "WhatsApp Pay", "sponsorBank": "State Bank of India" },
+
+    "upi": { "psp": "BHIM", "sponsorBank": "NPCI (sponsor varies)" },
+
+    "jupiteraxis": { "psp": "Jupiter", "sponsorBank": "Axis Bank" },
+    "naviaxis": { "psp": "Navi", "sponsorBank": "Axis Bank" },
+    "superyes": { "psp": "super.money", "sponsorBank": "Yes Bank" },
+    "mbk": { "psp": "MobiKwik", "sponsorBank": "HDFC Bank" },
+
+    "icici": { "psp": "iMobile (ICICI Bank)", "sponsorBank": "ICICI Bank" },
+    "hdfcbank": { "psp": "PayZapp (HDFC Bank)", "sponsorBank": "HDFC Bank" },
+    "sbi": { "psp": "BHIM SBI Pay", "sponsorBank": "State Bank of India" },
+    "axisbank": { "psp": "Axis Mobile", "sponsorBank": "Axis Bank" },
+    "kotak": { "psp": "Kotak811", "sponsorBank": "Kotak Mahindra Bank" },
+    "kmbl": { "psp": "Kotak811", "sponsorBank": "Kotak Mahindra Bank" },
+    "barodampay": { "psp": "bob World", "sponsorBank": "Bank of Baroda" },
+    "cnrb": { "psp": "Canara ai1", "sponsorBank": "Canara Bank" },
+    "pnb": { "psp": "PNB ONE", "sponsorBank": "Punjab National Bank" },
+    "idfcbank": { "psp": "IDFC FIRST Bank", "sponsorBank": "IDFC FIRST Bank" },
+    "idfcfirst": { "psp": "IDFC FIRST Bank", "sponsorBank": "IDFC FIRST Bank" },
+    "yesbank": { "psp": "Yes Bank", "sponsorBank": "Yes Bank" },
+    "yespay": { "psp": "Yes Bank", "sponsorBank": "Yes Bank" },
+    "fbl": { "psp": "Federal Bank", "sponsorBank": "Federal Bank" },
+    "federal": { "psp": "Federal Bank", "sponsorBank": "Federal Bank" },
+    "indus": { "psp": "IndusInd Bank", "sponsorBank": "IndusInd Bank" },
+    "dbs": { "psp": "DBS Bank", "sponsorBank": "DBS Bank" }
+  }
+}

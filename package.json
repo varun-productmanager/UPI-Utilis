@@ -1,0 +1,72 @@
+{
+  "name": "upi-utils",
+  "version": "0.1.0",
+  "description": "Correct, dependency-free TypeScript utilities for India's UPI rails — VPA validation, PSP/sponsor-bank resolution, upi:// deep links, and QR payloads.",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./handles.json": "./src/data/handles.json"
+  },
+  "files": [
+    "dist",
+    "src/data/handles.json"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsup",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "upi",
+    "vpa",
+    "psp",
+    "npci",
+    "phonepe",
+    "gpay",
+    "paytm",
+    "bharatqr",
+    "payments",
+    "india",
+    "deeplink",
+    "qr"
+  ],
+  "author": "Varun Singla",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/your-username/upi-utils.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-username/upi-utils/issues"
+  },
+  "homepage": "https://github.com/your-username/upi-utils#readme",
+  "peerDependencies": {
+    "qrcode": "^1.5.0"
+  },
+  "peerDependenciesMeta": {
+    "qrcode": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/qrcode": "^1.5.5",
+    "qrcode": "^1.5.4",
+    "tsup": "^8.0.0",
+    "typescript": "^5.4.0",
+    "vitest": "^2.0.0"
+  }
+}
