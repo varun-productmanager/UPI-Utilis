@@ -1,5 +1,10 @@
 # upi-utils
 
+[![CI](https://github.com/varun-productmanager/UPI-Utilis/actions/workflows/ci.yml/badge.svg)](https://github.com/varun-productmanager/UPI-Utilis/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+![TypeScript](https://img.shields.io/badge/TypeScript-strict-3178c6.svg)
+![Zero dependencies](https://img.shields.io/badge/runtime%20deps-0-success.svg)
+
 > Correct, dependency-free TypeScript utilities for India's UPI payment rails.
 
 **What is UPI?** UPI (Unified Payments Interface) is India's real-time bank-to-bank payment network — the rails behind apps like PhonePe, Google Pay, and Paytm, moving billions of transactions a month. You pay someone using a **VPA** (Virtual Payment Address) that looks like `varun@okhdfcbank`, or by scanning a QR that encodes a `upi://pay?...` link.
