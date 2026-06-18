@@ -12,7 +12,7 @@
 This library handles the parts that are easy to get *subtly* wrong unless you've actually shipped on these rails: case-insensitive VPA validation, resolving an `@handle` to the **PSP and sponsor bank** behind it, building spec-correct deep links and QR payloads, and Indian-format currency.
 
 ```bash
-npm install upi-utils
+npm install @varunsingla/upi-utils
 ```
 
 - **Zero runtime dependencies.** `qrcode` is an *optional* peer dependency, only needed if you want `renderQr`.
@@ -26,7 +26,7 @@ npm install upi-utils
 A VPA is `{identifier}@{handle}`, case-insensitive, with a constrained character set. The naive version is a one-line regex; the credible version handles case normalization, length bounds, rejecting leading/trailing/double dots, and treating "syntactically valid" as distinct from "known handle".
 
 ```ts
-import { isValidVpa, normalizeVpa } from 'upi-utils';
+import { isValidVpa, normalizeVpa } from '@varunsingla/upi-utils';
 
 isValidVpa('varun@okhdfcbank');  // true
 isValidVpa('9876543210@paytm');  // true
@@ -39,7 +39,7 @@ normalizeVpa('Varun@OKHDFCBANK'); // 'varun@okhdfcbank'
 The `@handle` does **not** map cleanly to a bank. It maps to a **PSP** (the app/TPAP that issued the address) and a **sponsor bank** (whose NPCI membership the app rides on). `@ybl` is **PhonePe**, not "Yes Bank's app".
 
 ```ts
-import { parseVpa } from 'upi-utils';
+import { parseVpa } from '@varunsingla/upi-utils';
 
 parseVpa('merchant@ybl');
 // { local: 'merchant', handle: 'ybl', psp: 'PhonePe', sponsorBank: 'Yes Bank', known: true }
@@ -56,7 +56,7 @@ parseVpa('x@paytm').psp;      // 'Paytm'  (sponsorBank: 'Paytm Payments Bank')
 `upi://pay?...` is the canonical NPCI deep-link spec. Getting it right means URL-encoding the VPA (`@` → `%40`) and note, fixing `cu=INR`, and — the bug a non-payments dev ships — serializing `am` as a **string with exactly two decimals**, because some PSP apps choke on a bare integer.
 
 ```ts
-import { buildUpiLink, buildAppUpiLink } from 'upi-utils';
+import { buildUpiLink, buildAppUpiLink } from '@varunsingla/upi-utils';
 
 buildUpiLink({
   pa: 'merchant@ybl',  // payee VPA (required)
@@ -79,7 +79,7 @@ buildAppUpiLink('phonepe', { pa: 'merchant@ybl', pn: 'Chai Point', am: 149 });
 A UPI QR just encodes the same `upi://pay?...` string. The useful distinction is **static** (no amount — payer types it in) vs **dynamic** (amount + ref baked in for a single sale).
 
 ```ts
-import { buildQrPayload, qrType, renderQr } from 'upi-utils';
+import { buildQrPayload, qrType, renderQr } from '@varunsingla/upi-utils';
 
 buildQrPayload({ pa: 'merchant@ybl', pn: 'Chai Point' });          // static
 buildQrPayload({ pa: 'merchant@ybl', pn: 'Chai Point', am: 149, tr: 'INV42' }); // dynamic
@@ -96,7 +96,7 @@ const dataUrl = await renderQr(buildQrPayload({ pa: 'merchant@ybl', pn: 'Chai Po
 ## Extras
 
 ```ts
-import { formatInr, maskVpa, maskMobile, generateRrn, generateTxnRef, classifyTransaction } from 'upi-utils';
+import { formatInr, maskVpa, maskMobile, generateRrn, generateTxnRef, classifyTransaction } from '@varunsingla/upi-utils';
 
 formatInr(100000);                  // '₹1,00,000'   (Indian lakh/crore grouping)
 formatInr(10000000);                // '₹1,00,00,000'

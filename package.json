@@ -1,5 +1,5 @@
 {
-  "name": "upi-utils",
+  "name": "@varunsingla/upi-utils",
   "version": "0.1.0",
   "description": "Correct, dependency-free TypeScript utilities for India's UPI rails — VPA validation, PSP/sponsor-bank resolution, upi:// deep links, and QR payloads.",
   "type": "module",
@@ -53,6 +53,9 @@
     "url": "https://github.com/varun-productmanager/UPI-Utilis/issues"
   },
   "homepage": "https://github.com/varun-productmanager/UPI-Utilis#readme",
+  "publishConfig": {
+    "access": "public"
+  },
   "peerDependencies": {
     "qrcode": "^1.5.0"
   },
